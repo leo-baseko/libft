@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 16:31:03 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/06 22:28:49 by ldrieske         ###   ########.fr       */
+/*   Created: 2022/10/06 23:10:28 by ldrieske          #+#    #+#             */
+/*   Updated: 2022/10/06 23:21:08 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s != '\0')
+	while (*s1 != '\0' && *s2 != '\0' && n > 0)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (*s1 != *s2)
+			break ;
+		s1++;
+		s2++;
+		n--;
 	}
-	return (NULL);
+	if (n == 0)
+		return (0);
+	return (*s1 - *s2);
 }
 /*
 #include <string.h>
 int	main()
 {
-	char test[] = "salut";
-	char test2[] = "salut";
-	
-	printf("ft_strchr : %s\n", ft_strchr(test, 'l'));
-	printf("strchr : %s\n", strchr(test2, 'l'));
+	printf("%d\n", ft_strncmp("azc", "acd", 5));
+	printf("%d\n", strncmp("azc", "acd", 5));
 	return (0);
 }*/

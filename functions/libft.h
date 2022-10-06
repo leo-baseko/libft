@@ -5,4 +5,6 @@
 # include <unistd.h>
 # include <string.h>
 
+size_t	ft_strlen(char *a);
+
 #endif

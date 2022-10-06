@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 16:31:03 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/06 22:28:49 by ldrieske         ###   ########.fr       */
+/*   Created: 2022/10/06 23:23:56 by ldrieske          #+#    #+#             */
+/*   Updated: 2022/10/07 00:06:54 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (*s != '\0')
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	return (NULL);
+    if (n != 0) {
+        const unsigned char *p = s;
+
+        do {
+            if (*p++ == c)
+                return ((void *)(p - 1));
+        } while (--n != 0);
+    }
+    return (NULL);
 }
-/*
+
 #include <string.h>
 int	main()
 {
-	char test[] = "salut";
-	char test2[] = "salut";
-	
-	printf("ft_strchr : %s\n", ft_strchr(test, 'l'));
-	printf("strchr : %s\n", strchr(test2, 'l'));
+	printf("memchr : %s\n", memchr("enorme test je comprends que dalle", 't', 15));
+	printf("ft_memchr : %s\n", ft_memchr("enorme test je comprends que dalle", 't', 15));
 	return (0);
-}*/
+}

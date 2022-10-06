@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 16:31:03 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/06 22:28:49 by ldrieske         ###   ########.fr       */
+/*   Created: 2022/10/06 22:29:25 by ldrieske          #+#    #+#             */
+/*   Updated: 2022/10/06 23:08:35 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	while (*s != '\0')
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	while (s[i - 1])
 	{
 		if (*s == c)
 			return ((char *)s);
-		s++;
-	}
+		s--;
+	}	
 	return (NULL);
 }
 /*
 #include <string.h>
 int	main()
 {
-	char test[] = "salut";
-	char test2[] = "salut";
-	
-	printf("ft_strchr : %s\n", ft_strchr(test, 'l'));
-	printf("strchr : %s\n", strchr(test2, 'l'));
+	char test[] = "bonjour les amis comment va";
+	char test2[] = "bonjour les amis comment va";
+
+	printf("ft_strrchr : %s\n", ft_strrchr(test, 'm'));
+	printf("strrchr : %s\n", strrchr(test2, 'm'));
 	return (0);
 }*/
