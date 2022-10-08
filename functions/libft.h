@@ -4,6 +4,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
+# include <stdlib.h>
 
 size_t	ft_strlen(char *a);
 
