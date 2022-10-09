@@ -16,10 +16,10 @@ void	*calloc(size_t count, size_t size)
 	void	*s;
 
 	s = (size_t)malloc(size * count);
-	if (!m)
+	if (!s)
 		return (NULL);
-	ft_bzero(m, size * count);
-	return (m);
+	ft_bzero(s, size * count);
+	return (s);
 }
 /*
 int	main()
