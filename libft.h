@@ -6,7 +6,7 @@
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:40:34 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/09 17:43:50 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:40:32 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -17,15 +17,15 @@
 # include <string.h>
 # include <stdlib.h>
 
-int     ft_isprint(int a);
-int     ft_isascii(int a);
+int		ft_isprint(int a);
+int		ft_isascii(int a);
 size_t	ft_strlen(char *a);
 int		ft_isalpha(int a);
 int		ft_isdigit(int a);
 int		ft_isalnum(int a);
 void	*ft_memset(void *a, int b, size_t len);
 void	ft_bzero(void *a, size_t n);
-void	*ft_memcpy(void *dst, void *src, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, void *src, size_t n);
 size_t	ft_strlcpy(char *dst, char const *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);

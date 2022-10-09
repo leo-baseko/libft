@@ -6,25 +6,26 @@
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:42:05 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/09 15:27:35 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:54:50 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void	*s;
+	void	*m;
 
-	s = malloc(size * count);
-	if (!s)
+	if (count == SIZE_MAX || size == SIZE_MAX)
 		return (NULL);
-	ft_bzero(s, size * count);
-	return (s);
+	m = malloc(size * count);
+	if (!m)
+		return (NULL);
+	ft_bzero(m, size * count);
+	return (m);
 }
 /*
 int	main()
 {
-	printf();
-	printf();
+	printf("%s\n", ft_calloc(5, 5));
 	return (0);
 }*/
