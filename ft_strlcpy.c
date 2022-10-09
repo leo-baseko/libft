@@ -6,7 +6,7 @@
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:45:54 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/04 17:20:05 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:51:40 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,7 +34,7 @@ size_t	ft_strlcpy(char *dst, char const *src, size_t size)
 	val += i;
 	return (val);
 }
-
+/*
 #include <string.h>
 int main()
 {
@@ -49,4 +49,4 @@ int main()
 	printf("test3 : %s\ntest4 : %s\n", test3, test4);
 
 	return (0);
-}
+}*/

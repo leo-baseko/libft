@@ -6,7 +6,7 @@
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:39:33 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/04 14:45:00 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:49:55 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -25,7 +25,6 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 		str1[i] = str2[i];
 		i++;
 	}
-
 	return (dst);
 }
 /*
