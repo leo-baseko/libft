@@ -1,57 +1,54 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/09 15:38:32 by ldrieske          #+#    #+#              #
-#    Updated: 2022/10/09 15:54:07 by ldrieske         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = 		libft.a
 
-NAME	=	libft.a
+RM = 		rm -rf
+CC = 		gcc
+FLAGS = 	-Wall -Werror -Wextra
 
-SRCS	=	ft_isaplha.c \
-			ft_isdigit.c \
-			ft_isalnum.c \
-			ft_memset.c \
-			ft_bzero.c \
-			ft_memcpy.c \
-			ft_memmove.c \
-			ft_strlcpy.c \
-			ft_strlcat.c \
-			ft_toupper.c \
-			ft_tolower.c \
-			ft_strrchr.c \
-			ft_strnchr.c \
-			ft_memchr.c \
-			ft_memcmp.c \
-			ft_strnstr.c \
-			ft_atoi.c \
-			ft_calloc.c \
-			ft_strdup.c \
+INCLUDE	=	libft.h \
 
-OBJS	=	$(SRCS.c=.o)
+SRC =		ft_isalnum.c \
+		 	ft_isalpha.c \
+		 	ft_isascii.c \
+		 	ft_isdigit.c \
+		 	ft_isprint.c \
+		 	ft_toupper.c \
+		 	ft_tolower.c \
+		 	ft_bzero.c \
+		 	ft_memcpy.c \
+		 	ft_memmove.c \
+		 	ft_memset.c \
+		 	ft_calloc.c \
+		 	ft_memchr.c \
+		 	ft_memcmp.c \
+		 	ft_strlen.c \
+		 	ft_strchr.c \
+		 	ft_strrchr.c \
+		 	ft_strncmp.c \
+		 	ft_strnstr.c \
+		 	ft_strlcpy.c \
+		 	ft_strlcat.c \
+		 	ft_strdup.c \
+	 		ft_atoi.c \
 
-DIR_INC	=	./
-INCLUDE	=	libft.h
+SRCS = 		$(SRC)
+OBJS = 		$(addsuffix .o, $(basename $(SRC)))
 
-CC		=	cc
-FLAGS	=	-Wall -Werror -Wextra
+INCS = 		$(addprefix -I, $(INCLUDE))
 
-all		:	$(NAME)
+all : 		$(NAME)
 
-.c.o	:	$(SRCS)
-			$(CC) $(FLAGS) -I $(DIR_INC) -c $< -o $@
+$(NAME) : 	$(OBJS)
+				ar rcs $@ $^
 
-$(NAME)	:	$(OBJS) $(INCLUDE)
-			$(CC) $(FLAGS) -o $(NAME) $(OBJS)
+clean :
+			$(RM) $(OBJS)
 
-clean	:
-			rm -r $(OBJS)
+fclean : 	clean
+			$(RM) $(NAME)
 
-fclean	:	clean
-			rm -f $(NAME)
+re : 		fclean all
 
-re		:	fclean all
+.c.o:		$(SRCS)
+			$(CC) -c -o $@ $< $(FLAGS)
+
+.PHONY: clean re fclean all bonus

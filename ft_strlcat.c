@@ -12,7 +12,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	while (dst[i])
 		i++;
 	//inclure le size et tout bref utiliser son cerveau
-	while (src[j])
+	while (src[j] && i < size)
 	{
 		dst[i] = src[j];
 		i++;

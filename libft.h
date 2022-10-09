@@ -6,6 +6,7 @@
 # include <string.h>
 # include <stdlib.h>
 
+size_t	ft_strlen(char *a);
 int	    ft_isalpha(int a);
 int	    ft_isdigit(int a);
 int	    ft_isalnum(int a);
