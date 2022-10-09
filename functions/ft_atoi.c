@@ -6,28 +6,16 @@
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:14:32 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/08 15:40:18 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/10/09 15:05:15 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_res_is_negative(char *f, int *a)
+int	ft_res_is_negative(char *f, int a)
 {
-	int	j;
-	int	k;
-	int	l;
-
-	j = 0;
-	k = 0;
-	l = *a;
-	while (f[j] < '0' || f[j] > '9')
-	{
-		if (f[j] == '-')
-			k++;
-		j++;
-	}
-	if (k % 2 != 0)
-		*a = l * (-1);
+	if (f[0] == '-')
+		return ((-a));
+	return (a);
 }
 
 int	ft_atoi(const char *str)
@@ -37,26 +25,20 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	res = 0;
-	while (str[i] != '\0')
+	if (str[0] == '-')
+		i++;
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			while (str[i] >= '0' && str[i] <= '9')
-			{
-				res = res * 10 + str[i] - '0';
-				i++;
-			}
-			ft_res_is_negative((char *)str, &res);
-			return (res);
-		}
+		res = res * 10 + str[i] - '0';
 		i++;
 	}
-	return (0);
+	res = ft_res_is_negative((char *)str, res);
+	return (res);
 }
-
+/*
 int	main()
 {
-	printf("ft_atoi : %d\n", ft_atoi("-455ut"));
-	printf("atoi : %d\n", atoi("-455ut"));
+	printf("ft_atoi : %d\n", ft_atoi("455ut"));
+	printf("atoi : %d\n", atoi("455ut"));
 	return (0);
-}
+}*/
