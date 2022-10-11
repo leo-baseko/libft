@@ -26,7 +26,7 @@ int		ft_isalnum(int a);
 void	*ft_memset(void *a, int b, size_t len);
 void	ft_bzero(void *a, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	*ft_memmove(void *dst, void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t n);
 size_t	ft_strlcpy(char *dst, char const *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_toupper(int a);

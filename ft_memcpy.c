@@ -6,7 +6,7 @@
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:33:51 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/09 20:59:51 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/10/11 11:53:35 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,20 +14,20 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-	char	*str1;
-	char	*str2;
+	void	*str;
 
+	str = dst;
 	i = 0;
-	str1 = (char *)src;
-	str2 = dst;
 	if (dst == 0 || src == dst)
 		return (NULL);
 	while (i < n)
 	{
-		*(str1 + i) = *(str2 + i);
+		*(char *)dst = *(char *)src;
+		dst++;
+		src++;
 		i++;
 	}
-	return (dst);
+	return (str);
 }
 /*
 #include <stdio.h>
@@ -39,6 +39,7 @@ int main()
 
 	char test2[] = "travailffffffffffffffffffffffffff";
 	char test3[] = "0235555555555555555555";
+
 	memcpy(test1, test0, 4);
 	printf("memcpy\ntest0 = %s\ntest1 = %s\n", test0, test1);
 	ft_memcpy(test2, test3, 4);

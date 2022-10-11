@@ -9,21 +9,30 @@
 /*   Updated: 2022/10/09 17:49:55 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dst, void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
 
-	str1 = src;
-	str2 = dst;
 	i = 0;
-	while (i < n)
+	if (!dst || !src)
+		return (0);
+	if (src < dst)
 	{
-		str1[i] = str2[i];
-		i++;
+		while (n > 0)
+		{
+			((char *)dst)[n - 1] = ((char *)src)[n - 1];
+			n--;
+		}
+	}
+	else
+	{
+		while (i < n)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
 	}
 	return (dst);
 }
@@ -31,15 +40,13 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 #include <string.h>
 int main()
 {
-	char test0[] = "salutsalut";
-	char test1[] = "bonjour";
+	//char src[] = {67, 68, 67, 68, 69, 0, 45};
+	char dest[] = {67, 67, 68, 68, 69, 0, 45};
 
-	char test2[] = "salutsalut";
-	char test3[] = "bonjour";
-	memmove(test1, test0, 3);
-	printf("memmove\ntest0 = %s\ntest1 = %s\n", test0, test1);
-	ft_memmove(test2, test3, 3);
-	printf("\nft_memmove\ntest2 = %s\ntest3 = %s", test2, test3);
+	ft_memmove(dest + 1, dest, 2);
+	printf("\nft_memmove\ntest2 = %s.\ntest3 = %s.\n", dest, dest);
+	memmove(dest + 1, dest, 2);
+	printf("\nmemmove : \n%s.\n%s.\n", dest, dest);
 
 	return 0;
 }*/
