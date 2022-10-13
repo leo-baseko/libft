@@ -13,26 +13,38 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	j;
+	char		*d;
+	const char	*s;
+	size_t		n;
+	size_t		dlen;
 
-	i = 0;
-	j = 0;
-	if (!(dst) || !(src))
-		return (0);
-	while (dst[i])
-		i++;
-	while (src[j] && i < size)
+	d = dst;
+	s = src;
+	n = size;
+	while (n-- != 0 && *d != '\0')
+		d++;
+	dlen = d - dst;
+	n = size - dlen;
+	if (n == 0)
+		return (dlen + strlen(s));
+	while (*s != '\0')
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		if (n != 1)
+		{
+			*d++ = *s;
+			n--;
+		}
+		s++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(dst));
+	*d = '\0';
+	return ((size_t)(dlen + (s - src)));
 }
+
 /*
+#include <string.h>
 int	main()
 {
+	printf("strlcat : %lu\n", strlcat("salut", "bonjour", 5));
+	printf("ft_strlcat : %lu\n", ft_strlcat("salut", "bonjour", 5));
 	return (0);
 }*/

@@ -13,7 +13,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {	
-	const unsigned char	*p;
+	const char	*p;
 
 	p = s;
 	if (n == 0)
@@ -31,7 +31,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 #include <string.h>
 int	main()
 {
-	printf("memchr : %s\n", memchr("enorme test salut salut", 's', 15));
-	printf("ft_memchr : %s\n", ft_memchr("enorme test salut salut", 's', 15));
+	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
+	printf("memchr : %s\n", (char *)memchr(tab, -1, 7));
+	printf("ft_memchr : %s\n", (char *)ft_memchr(tab, -1, 7));
 	return (0);
-}*/
+}
+*/
