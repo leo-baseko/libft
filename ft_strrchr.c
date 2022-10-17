@@ -13,18 +13,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	char	*ptr;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (s[i - 1])
+	ptr = NULL;
+	while (*s)
 	{
 		if (*s == c)
-			return ((char *)s);
-		s--;
-	}	
-	return (NULL);
+			ptr = ((char *)s);
+		s++;
+	}
+	if (*s == c)
+		ptr = (char *)s;
+	return (ptr);
 }
 /*
 #include <string.h>

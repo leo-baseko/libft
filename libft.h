@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+# include <stdint.h>
 
 int		ft_isprint(int a);
 int		ft_isascii(int a);

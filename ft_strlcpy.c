@@ -15,22 +15,13 @@
 //dernier test 13/10/2022 2:55 : 4 premiers ok | dernier ko
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char *d = dst;
-	const char *s = src;
-	size_t n = size - 1;
+	char		*d;
+	const char	*s;
+	size_t		n;
 
-	/* Copy as many bytes as will fit */
-	//tant que n != 0, n-- && *d++ = *s++
-	
-	/*
-	if (n != 0 && --n != 0) {
-		do {
-			if ((*d++ = *s++) == 0)
-				break;
-		} while (--n != 0);
-	}
-	*/
-	
+	d = dst;
+	s = src;
+	n = size - 1;
 	if (size == 0)
 		return (0);
 	while (n != 0 && (*d = *s) != 0)
@@ -39,15 +30,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		s++;
 		n--;
 	}
-	
-	/* A NORMINETTER */
-	if (n == 0) {
+	while (*s++)
+	{
 		if (size != 0)
 			*d = '\0';
-		while (*s++)
-			;
 	}
-	return(ft_strlen((char *)src));
+	return (ft_strlen((char *)src));
 }
 
 /*
