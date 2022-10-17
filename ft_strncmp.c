@@ -23,13 +23,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	if (n == 0)
 		return (0);
-	return (*s1 - *s2);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
-/*
-#include <string.h>
-int	main()
+/*int	main()
 {
-	printf("%d\n", ft_strncmp("azc", "acd", 5));
-	printf("%d\n", strncmp("azc", "acd", 5));
+	printf("%d\n", ft_strncmp("test\200", "test\0", 6));
+	printf("%d\n", strncmp("test\200", "test\0", 6));
 	return (0);
 }*/

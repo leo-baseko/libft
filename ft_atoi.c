@@ -11,34 +11,35 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_res_is_negative(char *f, int a)
-{
-	if (f[0] == '-')
-		return ((-a));
-	return (a);
-}
-
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	res;
+	int	n;
 
 	i = 0;
 	res = 0;
-	if (str[0] == '-')
+	n = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
 		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			n *= -1;
+		i++;
+	}
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
-	res = ft_res_is_negative((char *)str, res);
+	res *= n;
 	return (res);
 }
-/*
-int	main()
+
+/*int	main()
 {
-	printf("ft_atoi : %d\n", ft_atoi("455ut"));
-	printf("atoi : %d\n", atoi("455ut"));
+	printf("ft_atoi : %d\n", ft_atoi("\n\n\n   -46\b9 \n5d6"));
+	printf("atoi : %d\n", atoi("\n\n\n   -46\b9 \n5d6"));
 	return (0);
 }*/
