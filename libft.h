@@ -20,7 +20,7 @@
 
 int		ft_isprint(int a);
 int		ft_isascii(int a);
-size_t	ft_strlen(char *a);
+size_t	ft_strlen(const char *a);
 int		ft_isalpha(int a);
 int		ft_isdigit(int a);
 int		ft_isalnum(int a);

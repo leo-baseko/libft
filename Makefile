@@ -29,6 +29,9 @@ SRC =		ft_isalnum.c \
 		 	ft_strlcat.c \
 		 	ft_strdup.c \
 	 		ft_atoi.c \
+			ft_substr.c \
+			ft_strjoin.c
+
 
 SRCS = 		$(SRC)
 OBJS = 		$(addsuffix .o, $(basename $(SRC)))

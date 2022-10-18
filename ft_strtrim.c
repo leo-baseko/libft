@@ -11,15 +11,14 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+size_t	ft_count_trim(char const *s1, char const *set)
 {
-	char	*res;
 	size_t	count;
 	size_t	i;
 	size_t	j;
 
-	count = 0;
 	i = 0;
+	count = 0;
 	while (s1[i] != '\0')
 	{
 		j = 0;
@@ -34,13 +33,55 @@ char	*ft_strtrim(char const *s1, char const *set)
 		}
 		i++;
 	}
+	return (count);
+}
+
+char	ft_isnotset(char a, char *b)
+{
+	size_t	i;
+
+	i = 0;
+	if (!a)
+		return (0);
+	while (b[i])
+	{
+		if (b[i] == a)
+			return (0);
+		i++;
+	}
+	return (a);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*res;
+	size_t	count;
+	size_t	i;
+	size_t	j;
+	size_t	size;
+
+	count = ft_count_trim(s1, set);
+	i = 0;
+	j = 0;
+	size = (ft_strlen(s1) - count) + 1;
 	res = malloc(sizeof(char) * ((ft_strlen(s1) - count) + 1));
 	if (!res)
 		return (NULL);
-	return (NULL);
+	while (i <= size)
+	{
+		if (ft_isnotset(s1[i], (char *)set) != 0)
+		{
+			res[j] = ft_isnotset(s1[i], (char *)set);
+			j++;
+		}
+		i++;
+	}
+	res[j] = '\0';
+	return (res);
 }
 
-/*int main(void)
+int main(void)
 {
-	return (0);
-}*/
+    printf("%s\n", ft_strtrim("lorem ipsum dolor sit amet", "o?"));
+    return (0);
+}
