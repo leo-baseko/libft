@@ -30,7 +30,8 @@ SRC =		ft_isalnum.c \
 		 	ft_strdup.c \
 	 		ft_atoi.c \
 			ft_substr.c \
-			ft_strjoin.c
+			ft_strjoin.c \
+			ft_strtrim.c
 
 
 SRCS = 		$(SRC)

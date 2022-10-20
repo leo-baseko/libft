@@ -80,8 +80,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (res);
 }
 
-int main(void)
+/*int main(void)
 {
     printf("%s\n", ft_strtrim("lorem ipsum dolor sit amet", "o?"));
     return (0);
-}
+}*/
