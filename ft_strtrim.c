@@ -15,7 +15,7 @@
  * count how many set characters there is in the s1 debut
 */
 
-size_t	ft_cbegin(char const *s1, char const *set)
+static size_t	ft_cbegin(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
@@ -47,7 +47,7 @@ size_t	ft_cbegin(char const *s1, char const *set)
  * count how many set characters there is in the s1 last part
 */
 
-size_t	ft_clast(char const *s1, char const *set)
+static size_t	ft_clast(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
@@ -94,16 +94,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (s1[i + begin] && (i + begin) < ft_strlen(s1) - last)
-	{
-		res[j] = (char)s1[i + begin];
-		i++;
-		j++;
-	}
+		res[j++] = (char)s1[(i++) + begin];
+	res[j] = '\0';
 	return (res);
 }
 
 /*int main(void)
 {
-    printf("strtrim : %s\n", ft_strtrim("   xxxtripouille   xxx", " x"));
+    printf("strtrim : %s\n", 
+	ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "));
 	return (0);
 }*/
