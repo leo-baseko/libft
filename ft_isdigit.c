@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+* ft_isdigit
+*
+* Checks if the value of the Integer a is indeed a digit
+* (Must use a chr or the value of the character in the ASCII table)
+* Returns 1 if it is
+*/
+
 int	ft_isdigit(int a)
 {
 	if (a >= 48 && a <= 57)

@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_strncmp
+ *
+ * Gives the n bytes difference between s1 and s2 Strings
+ * Returns 0 is there's no difference
+*/
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (*s1 != '\0' && *s2 != '\0' && n > 0)

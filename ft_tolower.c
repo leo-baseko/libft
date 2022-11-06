@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_tolower
+ *
+ * Change the value of a to his lowercase equivalent
+*/
+
 int	ft_tolower(int a)
 {
 	if (a >= 'A' && a <= 'Z')

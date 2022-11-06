@@ -11,17 +11,24 @@
 /* ************************************************************************** */
 #include <stdio.h>
 
-void	*ft_memset(void *a, int b, size_t len)
+/*
+* ft_memset
+*
+* Writes len bytes of c value in a b pointer
+* Returns the value of b
+*/
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
 	unsigned char	*str;
 
-	str = a;
+	str = b;
 	i = 0;
 	while (i < len)
 	{
-		str[i] = (int)b;
+		str[i] = (int)c;
 		i++;
 	}
-	return (a = str);
+	return (b = str);
 }

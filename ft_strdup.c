@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_strdup
+ *
+ * Allocates sufficient memory (malloc) for a copy of s1
+ * Returns a pointer of the copy
+*/
+
 char	*ft_strdup(const char *s1)
 {
 	char	*a;

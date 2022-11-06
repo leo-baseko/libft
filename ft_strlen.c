@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_strlen
+ *
+ * Returns the length of the char
+*/
+
 size_t	ft_strlen(const char *a)
 {
 	size_t	i;

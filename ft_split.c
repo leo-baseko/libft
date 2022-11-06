@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*static void	ft_malloc_split(char *s)
+{
+	char **thesplit;
+	
+	thesplit = malloc(sizeof(char *) * (5));
+}*/
+
 /*
 * ft_split :
 * allocate the memory of the characters table from the s characters chain
@@ -28,7 +35,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[i] != '\0')
 	{
-
+		
 	}
 	*/
 	(void) s;

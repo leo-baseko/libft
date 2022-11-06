@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+* ft_isalnum
+*
+* Checks if the value a is alphanumerical
+* Returns 1 if it is
+*/
+
 int	ft_isalnum(int a)
 {
 	if (a >= 48 && a <= 57)

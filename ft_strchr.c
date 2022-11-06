@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_strchr
+ *
+ * Returns a pointer to the first occurence of the character c in
+ * the s String
+*/
+
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')

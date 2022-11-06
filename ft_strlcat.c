@@ -11,6 +11,14 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_strlcat
+ *
+ * Copies and concatenates dst and src Strings with the dst size
+ * Appends the NULL-terminated String src to the end of dst
+ * Returns the size of the concatenation
+*/
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	char		*d;
@@ -40,11 +48,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return ((size_t)(dlen + (s - src)));
 }
 
-/*
-#include <string.h>
+/*#include <string.h>
 int	main()
 {
-	printf("strlcat : %lu\n", strlcat("salut", "bonjour", 5));
-	printf("ft_strlcat : %lu\n", ft_strlcat("salut", "bonjour", 5));
+	printf("strlcat : %lu\n", strlcat("salut", "bonjour", 4));
+	printf("ft_strlcat : %lu\n", ft_strlcat("salut", "bonjour", 4));
 	return (0);
 }*/

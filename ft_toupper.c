@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_toupper
+ *
+ * Change the value of a to his uppercase equivalent
+*/
+
 int	ft_toupper(int a)
 {
 	if (a >= 'a' && a <= 'z')

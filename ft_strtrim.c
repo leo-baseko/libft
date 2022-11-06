@@ -83,18 +83,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	begin;
 	size_t	last;
 
-	if ((!s1) || (!set))
+	if (!s1 || !set)
 		return (NULL);
 	j = 0;
 	begin = ft_cbegin(s1, set);
 	last = ft_clast(s1, set);
 	i = begin + last;
+	if (ft_strlen(s1) < i)
+		return (NULL);
 	res = malloc(sizeof(char) * (ft_strlen(s1) - i) + 1);
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (s1[i + begin] && (i + begin) < ft_strlen(s1) - last)
-		res[j++] = (char)s1[(i++) + begin];
+	i = begin;
+	while (s1[i] && i < ft_strlen(s1) - last)
+		res[j++] = (char)s1[i++];
 	res[j] = '\0';
 	return (res);
 }
@@ -102,6 +104,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*int main(void)
 {
     printf("strtrim : %s\n", 
-	ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "));
+	ft_strtrim("abcdba", "acb"));
 	return (0);
 }*/

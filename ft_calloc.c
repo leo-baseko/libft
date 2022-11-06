@@ -11,6 +11,14 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+* ft_calloc
+*
+* Takes the count and size in parameter to return a pointer of type void
+* which can be cast into a pointer of any form
+* ??
+*/
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*m;

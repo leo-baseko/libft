@@ -11,6 +11,14 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_memcmp
+ * 
+ * Pretty similar to strncmp
+ * Gives the n bytes difference between s1 and s2
+ * Returns 0 is there's no difference
+*/
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*c1;

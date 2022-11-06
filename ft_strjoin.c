@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_strjoin
+ *
+ * Returns a new String, result of the concatenation between s1 and s2
+*/
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;

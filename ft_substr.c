@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_substr
+ *
+ * Does a copy
+ * Of what I dunno and I don't care for the moment
+*/
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*res;

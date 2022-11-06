@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_strnstr
+ *
+ * Find the needle String in the haystack String at the len size
+ * Returns a pointer of the result if it has been find
+*/
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;

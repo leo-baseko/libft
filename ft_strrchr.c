@@ -11,6 +11,14 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_strrchr
+ *
+ * Returns a pointer of the last occurence of the character c in
+ * the String s
+ * Returns NULL if the character is not found
+*/
+
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*ptr;
@@ -26,8 +34,8 @@ char	*ft_strrchr(const char *s, int c)
 		ptr = (char *)s;
 	return (ptr);
 }
-/*
-#include <string.h>
+
+/*#include <string.h>
 int	main()
 {
 	char test[] = "bonjour les amis comment va";

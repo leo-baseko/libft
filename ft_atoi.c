@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+* ft_atoi
+*
+* Takes a String in parameter and returns only the numerical value
+* as an Integer
+*/
+
 int	ft_atoi(const char *str)
 {
 	int	i;

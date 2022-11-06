@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * ft_memmove 
+ * 
+ * Copies n bytes from String src to String dst
+ * The 2 Strings may overlap (only difference with memcpy)
+*/
+
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t			i;

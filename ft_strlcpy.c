@@ -11,8 +11,14 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-//opensource.apple.com
-//dernier test 13/10/2022 2:55 : 4 premiers ok | dernier ko
+/*
+ * ft_strlcpy
+ *
+ * Copies and concatenates Strings with the same input parameters
+ * It does less errors than strncpy and strncat
+ * Returns the total length of the String it tried to create (length of src)
+*/
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	char		*d;
