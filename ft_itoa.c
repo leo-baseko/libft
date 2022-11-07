@@ -11,62 +11,55 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_intsize(int n)
+static int	nb_char(int n)
 {
-	int	size;
-	int	isize;
+	int	i;
 
-	isize = 0;
-	size = n;
-	while (size != 0)
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		i++;
+	while (n)
 	{
-		size = size/10;
-		isize++;
+		n /= 10;
+		i++;
 	}
-	return (isize);
-}
-
-static char	*ft_ispos(int n)
-{
-	char	*res;
-	int		i;
-
-	i = 0;
-	res = malloc(sizeof(char *) * ft_intsize(n) + 1);
-	return (res);
-}
-
-static char	*ft_isneg(int n)
-{
-	char	*res;
-	int		i;
-
-	i = 0;
-	res = malloc(sizeof(char *) * ft_intsize(n) + 2);
-	if (!res)
-		return (NULL);
-	res[0] = '-';
-	return (res);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*res;
+	size_t		l;
+	char		*nbr;
+	long int	c;
 
-	if (!n)
-		return (NULL);
-	if (n < 0)
-		res = ft_isneg(n);
-	else
-		res = ft_ispos(n);
-	return (res);
+	c = n;
+	l = nb_char(c);
+	nbr = malloc(sizeof(char) * l + 1);
+	if (!nbr)
+		return (0);
+	nbr[l--] = '\0';
+	if (c == 0)
+		nbr[0] = 48;
+	if (c < 0)
+	{
+		nbr[0] = '-';
+		c *= -1;
+	}
+	while (c > 0)
+	{
+		nbr[l--] = c % 10 + 48;
+		c /= 10;
+	}
+	return (nbr);
 }
 
-int main(void)
+/*int main(void)
 {
 	printf("crash test\n");
 	printf("intsize : %d\n", ft_intsize(115));
 	printf("ft_itoa(115) : %s\n", ft_itoa(115));
 	printf("ft_itoa(-115) : %s\n", ft_itoa(-115));
 	return (0);
-}
+}*/
