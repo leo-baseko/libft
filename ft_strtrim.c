@@ -15,7 +15,7 @@
  * count how many set characters there is in the s1 debut
 */
 
-static size_t	ft_cbegin(char const *s1, char const *set)
+static size_t	cbegin(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
@@ -47,7 +47,7 @@ static size_t	ft_cbegin(char const *s1, char const *set)
  * count how many set characters there is in the s1 last part
 */
 
-static size_t	ft_clast(char const *s1, char const *set)
+static size_t	clast(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
@@ -75,6 +75,16 @@ static size_t	ft_clast(char const *s1, char const *set)
 	return (res);
 }
 
+/*
+ * ft_strtrim
+ * 
+ * char const *s1 : the String we want to trim
+ * char const *set : the characters that will trim s1
+ * 
+ * Returns the s1 String without the characters of set at the
+ * beginning and ending of the String
+*/
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
@@ -86,8 +96,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	j = 0;
-	begin = ft_cbegin(s1, set);
-	last = ft_clast(s1, set);
+	begin = cbegin(s1, set);
+	if (begin == ft_strlen(s1))
+		return (res = ft_calloc(sizeof(char), 1));
+	last = clast(s1, set);
 	i = begin + last;
 	if (ft_strlen(s1) < i)
 		return (NULL);
@@ -104,6 +116,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*int main(void)
 {
     printf("strtrim : %s\n", 
-	ft_strtrim("abcdba", "acb"));
+	ft_strtrim("       ", " "));
 	return (0);
 }*/

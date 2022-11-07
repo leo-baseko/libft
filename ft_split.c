@@ -5,86 +5,127 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 16:19:08 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/01 16:20:52 by ldrieske         ###   ########.fr       */
+/*   Created: 2022/11/07 11:32:54 by ldrieske          #+#    #+#             */
+/*   Updated: 2022/11/07 11:55:13 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	words_counter(const char *str, char sep)
+/*
+ * words_counter
+ * 
+ * const char *s : the String we want splitted
+ * char sep : the separator we are using
+ * 
+ * Returns the number of words that we're going to display
+ * Returns 0 if s[0] is NULL
+*/
+
+static int	words_count(const char *s, char c)
 {
 	int	i;
-	int	wc;
+	int	words;
 
-	if (!str[0])
-		return (0);
 	i = 1;
-	wc = 0;
-	if (str[0] != sep)
-		wc++;
-	while (str[i])
+	words = 0;
+	if (s[0] == '\0')
+		return (0);
+	while (s[i])
 	{
-		if (str[i] != sep && str[i - 1] == sep)
-			wc++;
+		if (s[i] != c && (s[i - 1] == c || s[0] != c))
+			words++;
 		i++;
 	}
-	return (wc);
+	return (words);
 }
 
-static int	wordlen(const char *str, char sep, int start)
+/*
+ * word_len
+ *
+ * const char *s : the String we want to split
+ * char c : the separator
+ * int start : the starting position
+ * 
+ * Returns the length of the a word in s String at start position
+*/
+
+static int	word_len(const char *s, char c, int start)
 {
 	int	i;
 
 	i = start;
-	while (str[i] && str[i] != sep)
+	while (s[i] && s[i] != c)
 		i++;
 	return (i - start);
 }
 
-char	**ft_free_return(char **tab, int limit)
+/*
+ * free_return
+ * 
+ * char **tab : the whole table
+ * 
+ * Frees the memory inside table
+ * Then it frees the whole table
+*/
+
+static void	free_return(char **tab)
 {
 	int	i;
 
 	i = 0;
-	while (i < limit)
+	while (tab[i])
 		free(tab[i++]);
 	free(tab);
-	return (0);
 }
 
-char	**ft_split2(const char *s, char c, int i, int k)
-{
-	char	**dst;
-	int		j;
+/*
+ * tosplit 
+ * 
+ * const char *s : the String we want to split 
+ * char c : the separator
+ * char **tab : the final product
+ * 
+ * Returns the table malloced properly and with the words in it
+*/
 
-	dst = malloc(sizeof(char *) * (words_counter(s, c) + 1));
-	if (!dst)
-		return (NULL);
-	while (s[++i])
+char	**tosplit(const char *s, char c, char **tab)
+{
+	char	**res;
+	int		i;
+	int		j;
+	int		k;
+
+	res = tab;
+	i = 0;
+	k = 0;
+	while (s[i])
 	{
 		j = -1;
 		if (s[i] != c)
 		{
-			dst[k] = malloc(sizeof(char) * (wordlen(s, c, i)) + 1);
-			if (!dst[k])
-				return (ft_free_return(dst, k));
-			while (++j < wordlen(s, c, i))
-				dst[k][j] = s[i + j];
-			dst[k++][j] = '\0';
+			res[k] = malloc(sizeof(char) * (word_len(s, c, i)) + 1);
+			if (!res[k])
+				free_return(res);
+			while (++j < word_len(s, c, i))
+				res[k][j] = s[i + j];
+			res[k++][j] = '\0';
 			i += j - 1;
 		}
+		i++;
 	}
-	dst[k] = 0;
-	return (dst);
+	res[k] = NULL;
+	return (res);
 }
 
 /*
-* ft_split :
-* allocate the memory of the characters table from the s characters chain
+* ft_split
+*
+* Allocates the memory of the characters table from the s characters chain
 */
+
 char	**ft_split(char const *s, char c)
 {
-	char	**dst;
+	char	**res;
 	int		i;
 	int		k;
 
@@ -92,16 +133,21 @@ char	**ft_split(char const *s, char c)
 	k = 0;
 	if (!s)
 		return (0);
-	dst = ft_split2(s, c, i, k);
-	return (dst);
+	res = malloc(sizeof(char *) * (words_count(s, c) + 1));
+	if (!res)
+		return (NULL);
+	res = tosplit(s, c, res);
+	return (res);
 }
 
 /*int main(void)
 {
+	char **test = ft_split("Je-suis---sympa-salut-+-", '-');
 	int	i = 0;
-	while (i != 4)
+
+	while (test[i])
 	{
-		printf("%s\n", ft_split("Je-suis-sympa-salut", '-')[i]);
+		printf("<%d> %s\n", i, test[i]);
 		i++;
 	}
 	return (0);

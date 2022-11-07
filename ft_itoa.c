@@ -5,13 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 15:14:32 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/09 15:05:15 by ldrieske         ###   ########.fr       */
+/*   Created: 2022/11/07 12:09:17 by ldrieske          #+#    #+#             */
+/*   Updated: 2022/11/07 12:09:22 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	nb_char(int n)
+/*
+ * nb_char
+ * 
+ * int n : 
+ * 
+ * 
+*/
+
+static int	nbr_char(int n)
 {
 	int	i;
 
@@ -28,6 +36,14 @@ static int	nb_char(int n)
 	return (i);
 }
 
+/*
+ * ft_itoa 
+ * 
+ * int n : the Integer we want as a String
+ * 
+ * Returns a String representing the Integer received as an argument
+*/
+
 char	*ft_itoa(int n)
 {
 	size_t		l;
@@ -35,7 +51,7 @@ char	*ft_itoa(int n)
 	long int	c;
 
 	c = n;
-	l = nb_char(c);
+	l = nbr_char(c);
 	nbr = malloc(sizeof(char) * l + 1);
 	if (!nbr)
 		return (0);
