@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:54 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/07 11:55:13 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:58:21 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -113,12 +114,15 @@ char	**tosplit(const char *s, char c, char **tab)
 		}
 		i++;
 	}
-	res[k] = NULL;
+	res[k] = 0;
 	return (res);
 }
 
 /*
 * ft_split
+*
+* char const *s : the String we want to split
+* char c : the separator
 *
 * Allocates the memory of the characters table from the s characters chain
 */
@@ -126,16 +130,12 @@ char	**tosplit(const char *s, char c, char **tab)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		i;
-	int		k;
 
-	i = -1;
-	k = 0;
 	if (!s)
 		return (0);
 	res = malloc(sizeof(char *) * (words_count(s, c) + 1));
 	if (!res)
-		return (NULL);
+		return (0);
 	res = tosplit(s, c, res);
 	return (res);
 }

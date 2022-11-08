@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:28:56 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/08 11:45:42 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:41:38 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -26,7 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	c1 = s1;
 	c2 = s2;
-	while (*c1 != '\0' && *c2 != '\0' && n > 0)
+	while (*c1 && *c2 && n > 0)
 	{
 		if (*c1 != *c2)
 			break ;
@@ -38,11 +39,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	return (*c1 - *c2);
 }
-/*
-#include <string.h>
-int	main()
+
+/*int	main(void)
 {
-	printf("%d\n", memcmp("abz", "aaza", 1));
-	printf("%d\n", ft_memcmp("abz", "aaza", 1));
+	printf("%d\n", memcmp("abz", "aaza", 3));
+	printf("%d\n", ft_memcmp("abz", "aaza", 3));
+	
+    char *s1 = "atoms\0\0\0\0";
+    char *s2 = "atoms\0abc";
+    size_t size = 8;
+	printf("test ft_memcmp : %d\n", ft_memcmp(s1, s2, size));
+	printf("test memcmp : %d\n", memcmp(s1, s2, size));
+
 	return (0);
 }*/

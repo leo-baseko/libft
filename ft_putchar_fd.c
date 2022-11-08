@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 17:34:04 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/07 19:56:31 by ldrieske         ###   ########.fr       */
+/*   Created: 2022/11/07 20:13:26 by ldrieske          #+#    #+#             */
+/*   Updated: 2022/11/08 12:10:50 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * ft_strmapi
+ * ft_putchar_fd 
  * 
- * char const *s : The string on which to iterate
- * char (*f)(unsigned int, char): The function to apply to each character
+ * char c : the character to output
+ * int fd : the file descriptor on which to write
  * 
- * 
+ * Writes the c character in the file descriptor
 */
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*res;
-	size_t	i;
-
-	if (!s || !f)
-		return (NULL);
-	res = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!res)
-		return (NULL);
-	i = -1;
-	while (s[++i])
-		res[i] = f(i, s[i]);
-	res[i] = '\0';
-	return (res);
+	write(fd, &c, 1);
 }

@@ -3,19 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:14:32 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/09 15:05:15 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:02:16 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
-* ft_atoi
-*
-* Takes a String in parameter and returns only the numerical value
-* as an Integer
+ * ft_atoi
+ * 
+ * const char *str : the String
+ * 
+ * Takes a String in parameter and returns only the numerical value
+ * as an Integer
 */
 
 int	ft_atoi(const char *str)
@@ -44,24 +47,7 @@ int	ft_atoi(const char *str)
 	return (res);
 }
 
-/*static int	ft_isspace(unsigned char c)
-{
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	return (0);
-}
-
-void ft_clearbuff(char *s, int len)
-{
-	int i;
-	i = 0;
-	while (i < len)
-	{
-		s[i] = 0;
-		i++;
-	}
-}
-
+/*
 #include <stdlib.h>
 #include <stdio.h>
 int main()
