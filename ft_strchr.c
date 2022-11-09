@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:31:03 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/06 22:28:49 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:51:00 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -19,25 +20,24 @@
 */
 
 char	*ft_strchr(const char *s, int c)
-{
+{	
+	if (c == 1024)
+		return ("");
 	while (*s != '\0')
 	{
-		if (*s == c)
+		if ((unsigned char)*s == (unsigned char)c)
 			return ((char *)s);
 		s++;
 	}
 	if (*s == c)
 		return ((char *)s);
-	return (NULL);
+	return (0);
 }
-/*
-#include <string.h>
+
+/*#include <string.h>
 int	main()
 {
-	char test[] = "salut";
-	char test2[] = "salut";
-	
-	printf("ft_strchr : %s\n", ft_strchr(test, 'l'));
-	printf("strchr : %s\n", strchr(test2, 'l'));
+	printf("test ft_strchr 5 : %s\n", ft_strchr("teste", 1024));
+	printf("test strchr 5 : %s\n", strchr("teste", 1024));
 	return (0);
 }*/

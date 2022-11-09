@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:54 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/08 14:58:21 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:48:41 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,6 @@ char	**ft_split(char const *s, char c)
 {
 	char **test = ft_split("Je-suis---sympa-salut-+-", '-');
 	int	i = 0;
-
 	while (test[i])
 	{
 		printf("<%d> %s\n", i, test[i]);

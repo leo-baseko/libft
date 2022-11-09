@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:28:56 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/08 16:41:38 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:59:48 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,21 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*c1;
 	const unsigned char	*c2;
+	int					i;
 
-	c1 = s1;
-	c2 = s2;
-	while (*c1 && *c2 && n > 0)
+	c1 = (unsigned char *)s1;
+	c2 = (unsigned char *)s2;
+	i = 0;
+	while (n > 0)
 	{
-		if (*c1 != *c2)
+		if (c1[i] != c2[i])
 			break ;
-		c1++;
-		c2++;
+		i++;
 		n--;
 	}
 	if (n == 0)
 		return (0);
-	return (*c1 - *c2);
+	return (c1[i] - c2[i]);
 }
 
 /*int	main(void)
@@ -45,9 +46,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	printf("%d\n", memcmp("abz", "aaza", 3));
 	printf("%d\n", ft_memcmp("abz", "aaza", 3));
 	
-    char *s1 = "atoms\0\0\0\0";
-    char *s2 = "atoms\0abc";
-    size_t size = 8;
+    char s1[] = "abc";
+    char s2[] = "abc";
+    size_t size = 7;
 	printf("test ft_memcmp : %d\n", ft_memcmp(s1, s2, size));
 	printf("test memcmp : %d\n", memcmp(s1, s2, size));
 
