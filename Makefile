@@ -41,9 +41,13 @@ SRC =		ft_isalnum.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c
 
+SRCBONUS =	ft_lstnew.c \
+			ft_lstadd_front.c
 
 SRCS = 		$(SRC)
 OBJS = 		$(addsuffix .o, $(basename $(SRC)))
+
+OBJSBONUS	= $(SRCBONUS:.c=.o)
 
 INCS = 		$(addprefix -I, $(INCLUDE))
 
@@ -53,7 +57,7 @@ $(NAME) : 	$(OBJS)
 				ar rcs $@ $^
 
 clean :
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(OBJSBONUS)
 
 fclean : 	clean
 			$(RM) $(NAME)
@@ -63,4 +67,7 @@ re : 		fclean all
 .c.o:		$(SRCS)
 			$(CC) -c -o $@ $< $(FLAGS)
 
-.PHONY: clean re fclean all bonus
+bonus :		$(OBJSBONUS)
+				ar rcs $(NAME) $(OBJSBONUS)
+
+.PHONY: all clean fclean re bonus
