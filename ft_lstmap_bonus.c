@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 15:10:44 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/10 16:23:20 by ldrieske         ###   ########.fr       */
+/*   Created: 2022/11/14 08:21:26 by ldrieske          #+#    #+#             */
+/*   Updated: 2022/11/14 08:23:02 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * ft_lstadd_front
- * 
- * t_list **lst : the address of a pointer to the first link of a list
- * t_list *new : the address of a pointer to the node to be added to the list
- * 
- * Adds the node new in parameter at the beginning of the list
-*/
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del) (void *))
 {
 	(void) lst;
-	(void) new;
+	return ;
 }
