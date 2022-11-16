@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:40:34 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/14 15:33:36 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:09:46 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-// void	ft_lstdelone(t_list *lst, void (*del)(void *));
-// void	ft_lstclear(t_list **lst, void (*del)(void *));
-// void	ft_lstiter(t_list *lst, void (*f)(void *));
-// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del) (void *));
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:14:40 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/09 14:28:30 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:02:36 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,34 +22,6 @@
  * Allocates and returns a substring from the string s beginning 
  * at index start and of maximum size len
 */
-
-/*char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*res;
-	size_t	i;
-	size_t	size;
-
-	i = 0;
-	size = 0;
-	if (!s)
-		return (NULL);
-	if (len == 0 || ft_strlen(s) == 0)
-		return (res = malloc(sizeof(char) * 1));
-	while (s[size] && size < len && start < ft_strlen(s))
-		size++;
-	printf("%zu\n", size);
-	res = malloc(sizeof(char) * size + 1);
-	if (!res)
-		return (NULL);
-	while (size != 0)
-	{
-		res[i] = (char)s[start++];
-		size--;
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
-}*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -80,11 +52,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (res);
 }
 
-/*int	main(void)
-{
-	printf("salut\n");
-	printf("%s\n", ft_substr("lorem ipsum dolor sit amet", 5, 10));
-	printf("%s\n", ft_substr("hola", 2, 30));
-	printf("%s\n", ft_substr("", 0, 55));
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	printf("salut\n");
+// 	printf("%s\n", ft_substr("lorem ipsum dolor sit amet", 5, 10));
+// 	printf("%s\n", ft_substr("hola", 2, 30));
+// 	printf("%s\n", ft_substr("", 0, 55));
+// 	return (0);
+// }

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:33:51 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/11 11:53:35 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:19:19 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -24,7 +25,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	str = dst;
 	i = 0;
-	if (dst == 0 || src == dst)
+	if (src == dst)
 		return (NULL);
 	while (i < n)
 	{
