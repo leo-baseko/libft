@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:14:40 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 17:02:36 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:25:01 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	size = 0;
+	if (start >= ft_strlen(s) || len == 0 || ft_strlen(s) == 0)
+		return (res = ft_calloc(sizeof(char), 1));
 	if (!s)
 		return (NULL);
 	if (len > ft_strlen(s + start))
 		len = ft_strlen(s) - start;
-	if (len == 0 || ft_strlen(s) == 0 || start >= ft_strlen(s))
-		return (res = ft_calloc(sizeof(char), 1));
 	while (s[size] && size < len && start < ft_strlen(s))
 		size++;
 	res = malloc(sizeof(char) * size + 1);
@@ -58,5 +58,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	printf("%s\n", ft_substr("lorem ipsum dolor sit amet", 5, 10));
 // 	printf("%s\n", ft_substr("hola", 2, 30));
 // 	printf("%s\n", ft_substr("", 0, 55));
+// 	printf("%s\n", ft_substr("", 4, 5));
 // 	return (0);
 // }

@@ -6,14 +6,14 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:54 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 17:26:35 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:37:24 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * words_counter
+ * words_count
  * 
  * const char *s : the String we want splitted
  * char sep : the separator we are using
@@ -24,20 +24,23 @@
 
 static int	words_count(const char *s, char c)
 {
-	int	i;
-	int	words;
+	size_t	i;
+	size_t	size;
 
-	i = 1;
-	words = 0;
-	if (s[0] == '\0')
-		return (0);
+	i = 0;
+	size = 0;
 	while (s[i])
 	{
-		if (s[i] != c && (s[i - 1] == c || s[0] != c))
-			words++;
-		i++;
+		if (s[i] == c)
+			i++;
+		else
+		{
+			while (s[i] && s[i] != c)
+				i++;
+			size++;
+		}
 	}
-	return (words);
+	return (size);
 }
 
 /*
