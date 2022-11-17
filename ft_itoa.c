@@ -6,19 +6,11 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:09:17 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/08 14:59:49 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:28:30 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
- * nb_char
- * 
- * int n : 
- * 
- * 
-*/
 
 static int	nbr_char(int n)
 {
@@ -71,12 +63,3 @@ char	*ft_itoa(int n)
 	}
 	return (nbr);
 }
-
-/*int main(void)
-{
-	printf("crash test\n");
-	printf("intsize : %d\n", ft_intsize(115));
-	printf("ft_itoa(115) : %s\n", ft_itoa(115));
-	printf("ft_itoa(-115) : %s\n", ft_itoa(-115));
-	return (0);
-}*/

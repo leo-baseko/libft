@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:39:33 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 14:25:23 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:29:40 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,3 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-/*
-#include <string.h>
-int main()
-{
-	//char src[] = {67, 68, 67, 68, 69, 0, 45};
-	char dest[] = {67, 67, 68, 68, 69, 0, 45};
-
-	ft_memmove(dest + 1, dest, 2);
-	printf("\nft_memmove\ntest2 = %s.\ntest3 = %s.\n", dest, dest);
-	memmove(dest + 1, dest, 2);
-	printf("\nmemmove : \n%s.\n%s.\n", dest, dest);
-
-	return 0;
-}*/

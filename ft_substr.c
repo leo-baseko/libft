@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:14:40 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 18:25:01 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:48:51 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	res[i] = '\0';
 	return (res);
 }
-
-// int	main(void)
-// {
-// 	printf("salut\n");
-// 	printf("%s\n", ft_substr("lorem ipsum dolor sit amet", 5, 10));
-// 	printf("%s\n", ft_substr("hola", 2, 30));
-// 	printf("%s\n", ft_substr("", 0, 55));
-// 	printf("%s\n", ft_substr("", 4, 5));
-// 	return (0);
-// }

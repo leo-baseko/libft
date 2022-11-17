@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:42:05 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/09 18:54:50 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:28:20 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -16,7 +17,6 @@
 *
 * Takes the count and size in parameter to return a pointer of type void
 * which can be cast into a pointer of any form
-* ??
 */
 
 void	*ft_calloc(size_t count, size_t size)
@@ -31,9 +31,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(m, size * count);
 	return (m);
 }
-/*
-int	main()
-{
-	printf("%s\n", ft_calloc(5, 5));
-	return (0);
-}*/

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:45:54 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/09 17:51:40 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:31:11 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -42,20 +43,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	*d = '\0';
 	return (ft_strlen((char *)src));
 }
-
-/*
-#include <string.h>
-int main()
-{
-	char test1[] = "bonjour";
-	char test2[] = "slt";
-	char test3[] = "bonjour";
-	char test4[] = "slt";
-
-	printf("length strlcpy : %ld\n", strlcpy(test1, test2, 3));
-	printf("length ft_strlcpy : %ld\n", ft_strlcpy(test3, test4, 3));
-	printf("strlcpy test1 : %s\nstrlcpy test2 : %s\n", test1, test2);
-	printf("ft_strlcpy test1 : %s\nft_strlcpy test2 : %s\n", test3, test4);
-
-	return (0);
-}*/

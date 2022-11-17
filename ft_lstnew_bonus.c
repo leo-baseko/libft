@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:30:23 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/10 15:21:39 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:27:57 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,3 @@ t_list	*ft_lstnew(void *content)
 	newlist->next = NULL;
 	return (newlist);
 }
-
-/*int	main(void)
-{
-	char	content[5] = "salut";
-
-	printf("jsp voyons si ca compile deja\n\n");
-	printf("%s\n", ft_lstnew(content)->content);
-	//printf("%s\n", ft_lstnew(content)->next);
-	return (0);
-}*/

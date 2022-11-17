@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:54 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 19:37:24 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:30:08 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,15 +142,3 @@ char	**ft_split(char const *s, char c)
 	res = tosplit(s, c, res);
 	return (res);
 }
-
-// int main(void)
-// {
-// 	char **test = ft_split("chinimala", ' ');
-// 	int	i = 0;
-// 	while (test[i])
-// 	{
-// 		printf("<%d> %s\n", i, test[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }

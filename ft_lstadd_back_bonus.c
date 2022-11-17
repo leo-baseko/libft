@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 08:13:30 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 13:44:11 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:27:27 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
  * 
  * Adds the node new in parameter at the end of the list
 */
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;

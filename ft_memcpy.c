@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:33:51 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 14:19:19 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:29:30 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	char test0[] = "travailffffffffffffffffffffffffff";
-	char test1[] = "0235555555555555555555";
-
-	char test2[] = "travailffffffffffffffffffffffffff";
-	char test3[] = "0235555555555555555555";
-
-	memcpy(test1, test0, 4);
-	printf("memcpy\ntest0 = %s\ntest1 = %s\n", test0, test1);
-	ft_memcpy(test2, test3, 4);
-	printf("\nft_memcpy\ntest2 = %s\ntest3 = %s", test2, test3);
-	
-	return 0;
-}*/

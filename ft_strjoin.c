@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:16:44 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/17 16:17:31 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:30:38 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -40,9 +41,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	res[i] = '\0';
 	return (res);
 }
-
-/*int main(void)
-{
-	printf("%s\n", ft_strjoin("salut", " je suis gentil"));
-    return (0);
-}*/

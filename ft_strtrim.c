@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:08:07 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/17 20:09:10 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:48:45 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -112,10 +113,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res[j] = '\0';
 	return (res);
 }
-
-/*int main(void)
-{
-    printf("strtrim : %s\n", 
-	ft_strtrim("       ", " "));
-	return (0);
-}*/

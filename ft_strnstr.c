@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldrieske <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:46:47 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/10/09 14:30:27 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:48:10 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -46,11 +47,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
-/*int	main()
-{
-	printf("strnstr : %s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-	printf("ft_strnstr : %s\n",
-	ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-	return (0);
-}*/

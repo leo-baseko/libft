@@ -6,18 +6,16 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:40:34 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 14:09:46 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:54:40 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
-# include <stdint.h>
 
 int		ft_isprint(int a);
 int		ft_isascii(int a);

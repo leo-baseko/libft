@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:29:25 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 16:42:13 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:48:17 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return ((char *) &s[i]);
 }
-
-// int	main()
-// {
-// 	char test[] = "bonjour le\0s amis";
-// 	char test2[] = "bonjour le\0s amis";
-
-// 	printf("strrchr : %s\n", strrchr(test2, '\0'));
-// 	printf("ft_strrchr : %s\n", ft_strrchr(test, '\0'));
-// 	return (0);
-// }

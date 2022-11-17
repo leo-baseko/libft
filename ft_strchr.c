@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:31:03 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/16 16:13:55 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:30:13 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *) &s[i]);
 }
-
-// int	main()
-// {
-// 	printf("ft_strchr : %s\n", ft_strchr("teste", 1024));
-// 	printf("strchr : %s\n", strchr("teste", 1024));
-// 	return (0);
-// }
