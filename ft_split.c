@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:54 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/17 12:30:08 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:06:08 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	word_len(const char *s, char c, int start)
 	int	i;
 
 	i = start;
-	while (s[i] && s[i] != c)
+	while (s[i] != '\0' && s[i] != c)
 		i++;
 	return (i - start);
 }
@@ -72,13 +72,10 @@ static int	word_len(const char *s, char c, int start)
  * Then it frees the whole table
 */
 
-static void	free_return(char **tab)
+static void	free_return(char **tab, int k)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-		free(tab[i++]);
+	while (--k >= 0)
+		free(tab[k]);
 	free(tab);
 }
 
@@ -107,9 +104,9 @@ char	**tosplit(const char *s, char c, char **tab)
 		j = -1;
 		if (s[i] != c)
 		{
-			res[k] = malloc(sizeof(char) * (word_len(s, c, i)) + 1);
+			res[k] = malloc(sizeof(char) * (word_len(s, c, i) + 1));
 			if (!res[k])
-				free_return(res);
+				free_return(res, k);
 			while (++j < word_len(s, c, i))
 				res[k][j] = s[i + j];
 			res[k++][j] = '\0';
@@ -117,7 +114,7 @@ char	**tosplit(const char *s, char c, char **tab)
 		}
 		i++;
 	}
-	res[k] = 0;
+	res[k] = NULL;
 	return (res);
 }
 

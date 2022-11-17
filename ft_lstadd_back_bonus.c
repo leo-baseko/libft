@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 08:13:30 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/17 12:27:27 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:27:44 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		temp = *lst;
 		while (temp->next)
-		temp = temp->next;
+			temp = temp->next;
 		temp->next = new;
 	}
 }
