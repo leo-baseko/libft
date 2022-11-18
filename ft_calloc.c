@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:42:05 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/17 12:28:20 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:36:29 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*m;
 
-	if (count == SIZE_MAX || size == SIZE_MAX)
-		return (NULL);
 	m = malloc(size * count);
 	if (!m)
 		return (NULL);

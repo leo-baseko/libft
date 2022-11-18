@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:54 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/17 15:06:08 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:47:52 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,12 @@ static int	word_len(const char *s, char c, int start)
  * Then it frees the whole table
 */
 
-static void	free_return(char **tab, int k)
+static char	**free_return(char **tab, int k)
 {
 	while (--k >= 0)
 		free(tab[k]);
 	free(tab);
+	return (NULL);
 }
 
 /*
@@ -97,22 +98,21 @@ char	**tosplit(const char *s, char c, char **tab)
 	int		k;
 
 	res = tab;
-	i = 0;
+	i = -1;
 	k = 0;
-	while (s[i])
+	while (s[++i])
 	{
 		j = -1;
 		if (s[i] != c)
 		{
 			res[k] = malloc(sizeof(char) * (word_len(s, c, i) + 1));
 			if (!res[k])
-				free_return(res, k);
+				return (free_return(res, k));
 			while (++j < word_len(s, c, i))
 				res[k][j] = s[i + j];
 			res[k++][j] = '\0';
 			i += j - 1;
 		}
-		i++;
 	}
 	res[k] = NULL;
 	return (res);

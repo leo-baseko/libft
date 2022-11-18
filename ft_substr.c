@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:14:40 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/17 12:48:51 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:19:27 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	size = 0;
-	if (start >= ft_strlen(s) || len == 0 || ft_strlen(s) == 0)
-		return (res = ft_calloc(sizeof(char), 1));
 	if (!s)
 		return (NULL);
+	if (start >= ft_strlen(s) || len == 0 || ft_strlen(s) == 0)
+		return (res = ft_calloc(sizeof(char), 1));
 	if (len > ft_strlen(s + start))
 		len = ft_strlen(s) - start;
 	while (s[size] && size < len && start < ft_strlen(s))

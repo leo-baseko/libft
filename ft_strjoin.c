@@ -6,7 +6,7 @@
 /*   By: ldrieske <ldrieske@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:16:44 by ldrieske          #+#    #+#             */
-/*   Updated: 2022/11/17 12:30:38 by ldrieske         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:53:08 by ldrieske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
 	res = malloc(sizeof(char) * len + 1);
 	if (!res)
